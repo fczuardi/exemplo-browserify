@@ -3,8 +3,16 @@
   "version": "0.1.0",
   "description": "Exemplo de uso code splitting com browserify",
   "main": "index.js",
+  "config": {
+    "babel": "-t [ babelify --presets [ es2015 ] ]",
+    "partition": "-p [ partition-bundle --map mapping.json --output ./dist/www/js --url ./js --main ./src/app]"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "prebuild": "rm -rf ./dist && mkdir -p ./dist/www/js",
+    "build": "npm run build:html & npm run build:js",
+    "build:html": "cp ./src/index.html ./dist/www/.",
+    "build:js": "browserify $npm_package_config_babel $npm_package_config_partition",
+    "start": "http-server dist/www"
   },
   "repository": {
     "type": "git",
@@ -15,5 +23,12 @@
   "bugs": {
     "url": "https://github.com/fczuardi/exemplo-browserify/issues"
   },
-  "homepage": "https://github.com/fczuardi/exemplo-browserify#readme"
+  "homepage": "https://github.com/fczuardi/exemplo-browserify#readme",
+  "devDependencies": {
+    "babel-preset-es2015": "^6.1.18",
+    "babelify": "^7.2.0",
+    "browserify": "^12.0.1",
+    "partition-bundle": "^2.2.1",
+    "sha.js": "^2.4.4"
+  }
 }
