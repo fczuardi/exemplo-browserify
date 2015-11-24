@@ -1,0 +1,19 @@
+{
+  "name": "exemplo-browserify",
+  "version": "0.1.0",
+  "description": "Exemplo de uso code splitting com browserify",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fczuardi/exemplo-browserify.git"
+  },
+  "author": "Fabricio C Zuardi",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/fczuardi/exemplo-browserify/issues"
+  },
+  "homepage": "https://github.com/fczuardi/exemplo-browserify#readme"
+}
